@@ -1,13 +1,12 @@
-nums = [1, 2, 3, 1, 2, 3]
-nums.sort()
+s = 'aababcabc'
 k = 3
-n = len(nums) - 1
-i = 0
-j = 1
-while i <= n:
-    if nums[i] == nums[j] and abs(i - j) <= k:
-        print(True)
-    else:
-        i += 1
-        j += 1
-print(False)
+s_list = list(s)
+window_str = s[:k]
+n = len(s)
+ans = []
+for i in range(n - k):
+    window_str = window_str.replace(window_str[i], '') + s[i + k]
+    if window_str not in ans:
+        ans.append(window_str)
+print(len(ans))
+
