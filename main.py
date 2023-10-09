@@ -1,11 +1,12 @@
-answerKey = 'TTFF'
-k = 2
-n = len(answerKey)
-answer_l = list(answerKey)
-count = i = 0
-while count < k:
-    if answer_l[i] == 'F':
-        answer_l[i] = 'T'
-        count += 1
-    i += 1
-print(answer_l.count('T'))
+s = 'aababcabc'
+k = 3
+s_list = list(s)
+window_str = s[:k]
+n = len(s)
+ans = []
+for i in range(n - k):
+    window_str = window_str.replace(window_str[i], '') + s[i + k]
+    if window_str not in ans:
+        ans.append(window_str)
+print(len(ans))
+
