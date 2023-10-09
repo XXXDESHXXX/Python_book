@@ -1,27 +1,17 @@
-DFS - рекурсивный алгоритм по поиску всех вершин графа или дерева. Обход подразумевает под собой посещение всех вершин графа.
-Реализация:
-Стандартная реализация алгоритма помещает каждую вершину (узел, node) графа в одну из двух категорий.
-1. Visited(Посещённые)
-2. Not visited(Не посещённые)
+DFS - ДФС следует путём от начального до конечного узла(вершины), затем от начало и до конца и так далее, пока все узлы не будут посещены.
 Пример:
-def dfs(graph, start, visited=None):
-    if visited is None:
-        visited = set()
-    visited.add(start)
+def rangeSumBST(self, root: Optional[TreeNode], low: int, high: int) -> int:
+        if not root:
+            return 0
 
-    print(start)
+        result = root.val if root.val in range(low, high + 1) else 0
 
-    for next in graph[start] - visited:
-        dfs(graph, next, visited)
-    return visited
+        if root.val > low:
+            result += self.rangeSumBST(root.left, low, high)
 
+        if root.val < high:
+            result += self.rangeSumBST(root.right, low, high)
 
-graph = {'0': set(['1', '2']),
-         '1': set(['0', '3', '4']),
-         '2': set(['0']),
-         '3': set(['1']),
-         '4': set(['2', '3'])}
-
-dfs(graph, '0')
+        return result
 Временная сложность алгоритма O(V + E), где V - количество вершин, а E - количество рёбер.
 Пространственная сложность алгоритма равна O(V).
