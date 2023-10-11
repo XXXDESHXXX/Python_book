@@ -9,9 +9,23 @@
 Таблица - отношение
 Столбец - атрибут
 Строка/запись - кортеж
+SQL (Structured Query Language) - язык запросов, который применяют, чтобы работать с базами данных, структурированных особым образом
 Результатом SQL запроса является результирующий набор(таблица)
 SQL категоризируется на:
 DDL (Data Definition Language) - CREATE, ALTER, DROP.
 DML (Data Manipulation Language) - SELECT, INSERT, UPDATE, DELETE.
 TCL (Transaction Control Language) - COMMIT, ROLLBACK, SAVEPOINT.
 DCL (Data Control Language) - GRANT, REVOKE, DENY.
+Типы данных в PostgreSQL:
+- Integral Numbers:
+smallint, integer, bigint,
+- Real Numbers:
+ decimal/numeric, real/float4, double precision/float8/float.
+ - Integral Numbers(автоинкрементирование):
+ smallserial, serial, bigserial
+ - Characters:
+ char, varchar, text
+ - Logical:
+Boolean, bool
+- Temporal:
+date, time, timestamp, interval, temestamptz
