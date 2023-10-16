@@ -18,14 +18,18 @@ TCL (Transaction Control Language) - COMMIT, ROLLBACK, SAVEPOINT.
 DCL (Data Control Language) - GRANT, REVOKE, DENY.
 Типы данных в PostgreSQL:
 - Integral Numbers:
-smallint, integer, bigint,
+smallint, integer, bigint
 - Real Numbers:
  decimal/numeric, real/float4, double precision/float8/float.
- - Integral Numbers(автоинкрементирование):
+ - Integral Numbers(автоинкрементирование):j
  smallserial, serial, bigserial
  - Characters:
  char, varchar, text
  - Logical:
 Boolean, bool
 - Temporal:
-date, time, timestamp, interval, temestamptz
+date, time, timestamp, interval, timestamptz
+Отношение между таблицами в SQL:
+Один ко многим - вид отношения, при котором один элемент из таблицы a может относиться к нескольким из таблицы b.
+Один к одному - вид отношения, при котором один элемент из табилцы a относиться к одному элементу из таблицы b.
+Многие ко многим - вид отношения, при котором несколько элементов из таблицы a относяться к нескольким элементам из таблицы b.
