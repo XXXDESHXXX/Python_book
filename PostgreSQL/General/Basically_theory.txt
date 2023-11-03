@@ -21,7 +21,7 @@ DCL (Data Control Language) - GRANT, REVOKE, DENY.
 smallint, integer, bigint
 - Real Numbers:
  decimal/numeric, real/float4, double precision/float8/float.
- - Integral Numbers(автоинкрементирование):j
+ - Integral Numbers(автоинкрементирование):
  smallserial, serial, bigserial
  - Characters:
  char, varchar, text
