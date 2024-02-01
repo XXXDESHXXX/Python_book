@@ -1,0 +1,15 @@
+Django Debug Toolbar - Меню отладочных инструментов, внешнее приложение Django, которое позволяет просматривать соответствующую информацию о текущем цикле запроса/ответа.
+pip install django-debug-toolbar
+Далее в INSTALLED_APPPS добавить debug_toolbar
+В MIDDLEWARE:
+'debug_toolbar.middleware.DebugToolbarMiddleware'
+Должно находится на первом месте в middleware, за исключением промежуточного компонента, кодирующего содержимое ответа.
+Также следует добавить свой IP-адресс в INTERNAL_IPS, данная настройка должна находится внизу страницу настроек проекта.
+В главный файл urls.py проекта также следует добавить:
+path('__debug__/', include('debug_toolbar.urls')),
+Если боковое меню не появляется, то стоит проверить журнал консоли оболочки RunServer. Если вы видите ошибку MIME-типа, то, скорее всего, ваши файлы соотнесения MIME неверны либо нуждаются в обновлении.
+Правильное соотнесения для файлов JavaScript и CSS достигается путём добавления следующего кода в settings.py:
+if DEBUG:
+    import mimetypes
+            mimetypes.add_type('application/javascript', '.js', True)
+            mimetypes.add_type('text/css', '.css', True)
